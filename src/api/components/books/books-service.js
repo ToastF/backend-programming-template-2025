@@ -1,7 +1,11 @@
 const booksRepository = require('./books-repository');
 
-async function getBooks() {
-  return booksRepository.getBooks();
+async function getBooks(offset, limit) {
+  return booksRepository.getBooks(offset, limit);
+}
+
+async function getBooksByID(id) {
+  return booksRepository.getBooksByID(id);
 }
 
 async function create(title) {
@@ -11,4 +15,5 @@ async function create(title) {
 module.exports = {
   getBooks,
   create,
+  getBooksByID,
 };
